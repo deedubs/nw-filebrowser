@@ -1,4 +1,8 @@
 {
   "name": "nw-filebrowser",
-  "main": "index.html"
+  "main": "index.html",
+  "window": {
+    "title": "nw-filebrowser",
+    "toolbar": false
+  }
 }
