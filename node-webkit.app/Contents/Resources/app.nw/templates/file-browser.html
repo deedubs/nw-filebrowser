@@ -1,6 +1,7 @@
 <h1>Files</h1>
 
 <ul>
+  <li ng-click="openfile('..')">..</li>
   <li ng-repeat="file in files" ng-click="openfile(file)">
     {{file}}
   </li>

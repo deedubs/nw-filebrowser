@@ -5,18 +5,18 @@ mod.directive('fileBrowser', function () {
   return {
     templateUrl: "./templates/file-browser.html",
     controller: function ($scope) {
-      var path = process.cwd();
+      $scope.path = process.cwd();
       
       $scope.openfile = function (file) {
         file = file || '';
         
-        console.log('path + file', path + file)
-        fs.readdir([path, file].join('/'), function (err, files) {
+        console.log('path + file', $scope.path + file)
+        fs.readdir([$scope.path, file].join('/'), function (err, files) {
           $scope.$apply(function () {
             if (err) {
-              $scope.file = fs.readFileSync([path, file].join('/'),'utf-8');
+              $scope.file = fs.readFileSync([$scope.path, file].join('/'),'utf-8');
             } else {
-              path = [path, file].join('/');
+              $scope.path = [$scope.path, file].join('/');
               $scope.files = files;
             }
           });
