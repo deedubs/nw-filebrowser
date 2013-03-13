@@ -1,0 +1,16 @@
+<h1>Files</h1>
+
+<ul>
+  <li ng-repeat="file in files" ng-click="openfile(file)">
+    {{file}}
+  </li>
+</ul>
+
+<div ng-show="file">
+  <h2>Showing a file</h2>
+  <pre>
+    <code>
+      {{file}}
+    </code>
+  </pre>
+</div>
